@@ -81,7 +81,6 @@ C:\Users\Juan Daniel\source\repos\PuntoVentaCliente\PuntoVentaCliente\bin\Micros
 C:\Users\Juan Daniel\source\repos\PuntoVentaCliente\PuntoVentaCliente\bin\Microsoft.AI.Web.xml
 C:\Users\Juan Daniel\source\repos\PuntoVentaCliente\PuntoVentaCliente\bin\es\System.Web.Optimization.resources.dll
 C:\Users\Juan Daniel\source\repos\PuntoVentaCliente\PuntoVentaCliente\bin\es\Microsoft.AspNet.FriendlyUrls.resources.dll
-C:\Users\Juan Daniel\source\repos\PuntoVentaCliente\PuntoVentaCliente\obj\Debug\PuntoVentaCliente.csprojResolveAssemblyReference.cache
 C:\Users\Juan Daniel\source\repos\PuntoVentaCliente\PuntoVentaCliente\obj\Debug\PuntoVentaCliente.csproj.CoreCompileInputs.cache
 C:\Users\Juan Daniel\source\repos\PuntoVentaCliente\PuntoVentaCliente\obj\Debug\PuntoVentaCliente.csproj.CopyComplete
 C:\Users\Juan Daniel\source\repos\PuntoVentaCliente\PuntoVentaCliente\obj\Debug\PuntoVentaCliente.dll

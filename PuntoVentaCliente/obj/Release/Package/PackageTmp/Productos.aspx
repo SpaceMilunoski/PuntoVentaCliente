@@ -130,7 +130,9 @@
                            <div class="col-sm-8">
                                 <input id="buscar" class="form-control" type="text" placeholder="Buscar">
                             </div>
+                            <div class="col-sm-2">
                             <button type="button" class="btn btn-success">Buscar</button>
+                            </div>
                         </div>
                         <!--------------------------------------->
             </div>
@@ -140,10 +142,20 @@
                 <table class="table">
                       <thead>
                         <tr>
-                          <th scope="col">#</th>
-                          <th scope="col">First</th>
-                          <th scope="col">Last</th>
-                          <th scope="col">Handle</th>
+                            <th scope="col">Identificador</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Marca</th>
+                            <th scope="col">Proveedor</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Costo venta</th>
+                            <th scope="col">Costo compra</th>
+                            <th scope="col">Stock</th>
+                            <th scope="col">Fecha registro</th>
+                            <th scope="col">Unidad medida</th>
+                            <th scope="col">Fecha caducidad</th>
+                            <th scope="col">Departamento</th>
+                            <th scope="col"></th>
                         </tr>
                       </thead>
                       <tbody>
@@ -152,18 +164,25 @@
                           <td>Mark</td>
                           <td>Otto</td>
                           <td>@mdo</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                            <td>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <button type="button" class="btn btn-danger"><i class="material-icons">delete</i></button>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <button type="button" class="btn btn-primary"><i class="material-icons">edit</i></button>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                       </tbody>
                     </table>
