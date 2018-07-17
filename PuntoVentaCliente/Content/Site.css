@@ -29,6 +29,11 @@ textarea {
         padding: 0;
     }
 }
-.row{
-    margin-bottom: 0px;
+
+label{
+    font-size:12px;
+    margin:0px;
+}
+.navbar {
+    border: 1px solid transparent;
 }
