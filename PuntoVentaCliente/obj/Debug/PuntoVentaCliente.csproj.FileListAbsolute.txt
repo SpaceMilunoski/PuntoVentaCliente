@@ -171,3 +171,4 @@ C:\Users\Toño\Desktop\Punto de venta cliente\PuntoVentaCliente\PuntoVentaClient
 C:\Users\Toño\Desktop\Punto de venta cliente\PuntoVentaCliente\PuntoVentaCliente\obj\Debug\PuntoVentaCliente.csprojResolveAssemblyReference.cache
 C:\Users\Toño\Desktop\Punto de venta cliente\PuntoVentaCliente\PuntoVentaCliente\obj\Debug\PuntoVentaCliente.dll
 C:\Users\Toño\Desktop\Punto de venta cliente\PuntoVentaCliente\PuntoVentaCliente\obj\Debug\PuntoVentaCliente.pdb
+C:\Users\Juan Daniel\source\repos\PuntoVentaCliente\PuntoVentaCliente\obj\Debug\PuntoVentaCliente.csprojResolveAssemblyReference.cache
