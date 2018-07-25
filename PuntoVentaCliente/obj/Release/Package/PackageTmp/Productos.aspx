@@ -23,14 +23,28 @@
                         <div class="form-group row">
                             <label for="marca" class="col-sm-4 col-form-label">Marca</label>
                             <div class="col-sm-8">
-                                <input id="marca" class="form-control" type="text" placeholder="Default input">
+                                <!--<input id="marca" class="form-control" type="text" placeholder="Default input">-->
+                                <select class="form-control" id="marca">
+                                      <option>1</option>
+                                      <option>2</option>
+                                      <option>3</option>
+                                      <option>4</option>
+                                      <option>5</option>
+                                </select>
                             </div>
                         </div>
                         <!----------------------------------->
                         <div class="form-group row">
                             <label for="proveedor" class="col-sm-4 col-form-label">Proveedor</label>
                             <div class="col-sm-8">
-                                <input id="proveedor" class="form-control" type="text" placeholder="Default input">
+                                <!--<input id="proveedor" class="form-control" type="text" placeholder="Default input">-->
+                                <select class="form-control" id="proveedor">
+                                      <option>1</option>
+                                      <option>2</option>
+                                      <option>3</option>
+                                      <option>4</option>
+                                      <option>5</option>
+                                </select>
                             </div>
                         </div>
                         <!----------------------------------->
@@ -53,28 +67,21 @@
                         <div class="form-group row">
                             <label for="costo_venta" class="col-sm-4 col-form-label">Costo de venta</label>
                             <div class="col-sm-8">
-                                <input id="costo_venta" class="form-control" type="text" placeholder="Default input">
+                                <input id="costo_venta" class="form-control" type="number" placeholder="0">
                             </div>
                         </div>
                         <!----------------------------------->
                         <div class="form-group row">
                             <label for="costo_compra" class="col-sm-4 col-form-label">Costo de compra</label>
                             <div class="col-sm-8">
-                                <input id="costo_compra" class="form-control" type="text" placeholder="Default input">
-                            </div>
-                        </div>
-                        <!----------------------------------->
-                        <div class="form-group row">
-                            <label for="costo_compra" class="col-sm-4 col-form-label">Costo de compra</label>
-                            <div class="col-sm-8">
-                                <input id="costo_compra" class="form-control" type="text" placeholder="Default input">
+                                <input id="costo_compra" class="form-control" type="number" placeholder="0">
                             </div>
                         </div>
                         <!----------------------------------->
                         <div class="form-group row">
                             <label for="stock" class="col-sm-4 col-form-label">Stock</label>
                             <div class="col-sm-8">
-                                <input id="stock" class="form-control" type="text" placeholder="Default input">
+                                <input id="stock" class="form-control" type="number" placeholder="0">
                             </div>
                         </div>
                         <!----------------------------------->                    
@@ -83,28 +90,42 @@
                         <div class="form-group row">
                             <label for="fecha_registro" class="col-sm-4 col-form-label">Fecha de Registro</label>
                             <div class="col-sm-8">
-                                <input id="fecha_registro" class="form-control" type="text" placeholder="Default input">
+                                <input id="fecha_registro" class="form-control" type="date" min="1000-01-01" max="3000-12-31">
                             </div>
                         </div>
                       <!------------------------------------->
                         <div class="form-group row">
                             <label for="unidad_medida" class="col-sm-4 col-form-label">Unidad de Medida</label>
                             <div class="col-sm-8">
-                                <input id="unidad_medida" class="form-control" type="text" placeholder="Default input">
+                                <!--<input id="unidad_medida" class="form-control" type="text" placeholder="Default input">-->
+                                <select class="form-control" id="unidad_medida">
+                                      <option>1</option>
+                                      <option>2</option>
+                                      <option>3</option>
+                                      <option>4</option>
+                                      <option>5</option>
+                                </select>
                             </div>
                         </div>    
                       <!------------------------------------->
                         <div class="form-group row">
                           <label for="fecha_caducidad" class="col-sm-4 col-form-label">Fecha de caducidad</label>
                           <div class="col-sm-8">
-                              <input id="fecha_caducidad" class="form-control" type="text" placeholder="Default input">
+                              <input id="fecha_caducidad" class="form-control" type="date" min="1000-01-01" max="3000-12-31" >
                           </div>
                       </div>   
                       <!------------------------------------->
                         <div class="form-group row">
                             <label for="departamento" class="col-sm-4 col-form-label">Departamento</label>
                             <div class="col-sm-8">
-                                <input id="departamento" class="form-control" type="text" placeholder="Default input">
+                                <!--<input id="departamento" class="form-control" type="text" placeholder="Default input">-->
+                                <select class="form-control" id="departamento">
+                                      <option>1</option>
+                                      <option>2</option>
+                                      <option>3</option>
+                                      <option>4</option>
+                                      <option>5</option>
+                                </select>
                             </div>
                         </div>   
                       <!------------------------------------->                                                                  

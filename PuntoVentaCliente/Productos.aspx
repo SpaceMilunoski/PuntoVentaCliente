@@ -9,14 +9,14 @@
                         <div class="form-group row">
                             <label for="identificador" class="col-sm-4 col-form-label">Identificador</label>
                             <div class="col-sm-8">
-                                <input id="identificador" class="form-control" type="text" placeholder="Default input">
+                                <input id="identificador" class="form-control" type="text" placeholder="Default input" runat="server">
                             </div>
                         </div>
                         <!----------------------------------->
                         <div class="form-group row">
                             <label for="nombre" class="col-sm-4 col-form-label">Nombre</label>
                             <div class="col-sm-8">
-                                <input id="nombre" class="form-control" type="text" placeholder="Default input">
+                                <input id="nombre" class="form-control" type="text" placeholder="Default input"runat="server">
                             </div>
                         </div>
                         <!----------------------------------->
@@ -24,7 +24,7 @@
                             <label for="marca" class="col-sm-4 col-form-label">Marca</label>
                             <div class="col-sm-8">
                                 <!--<input id="marca" class="form-control" type="text" placeholder="Default input">-->
-                                <select class="form-control" id="marca">
+                                <select class="form-control" id="marca" runat="server">
                                       <option>1</option>
                                       <option>2</option>
                                       <option>3</option>
@@ -38,7 +38,7 @@
                             <label for="proveedor" class="col-sm-4 col-form-label">Proveedor</label>
                             <div class="col-sm-8">
                                 <!--<input id="proveedor" class="form-control" type="text" placeholder="Default input">-->
-                                <select class="form-control" id="proveedor">
+                                <select class="form-control" id="proveedor" runat="server">
                                       <option>1</option>
                                       <option>2</option>
                                       <option>3</option>
@@ -53,35 +53,35 @@
                         <div class="form-group row">
                             <label for="descripcion" class="col-sm-4 col-form-label">Descripcion</label>
                             <div class="col-sm-8">
-                                <input id="descripcion" class="form-control" type="text" placeholder="Default input">
+                                <input id="descripcion" class="form-control" type="text" placeholder="Default input" runat="server">
                             </div>
                         </div>
                         <!----------------------------------->
                         <div class="form-group row">
                             <label for="imagen" class="col-sm-4 col-form-label">Imagen</label>
                             <div class="col-sm-8">
-                                <input id="imagen" class="form-control" type="text" placeholder="Default input">
+                                <input id="imagen" class="form-control" type="text" placeholder="Default input" runat="server">
                             </div>
                         </div>
                         <!----------------------------------->
                         <div class="form-group row">
                             <label for="costo_venta" class="col-sm-4 col-form-label">Costo de venta</label>
                             <div class="col-sm-8">
-                                <input id="costo_venta" class="form-control" type="number" placeholder="0">
+                                <input id="costo_venta" class="form-control" type="number" placeholder="0" runat="server">
                             </div>
                         </div>
                         <!----------------------------------->
                         <div class="form-group row">
                             <label for="costo_compra" class="col-sm-4 col-form-label">Costo de compra</label>
                             <div class="col-sm-8">
-                                <input id="costo_compra" class="form-control" type="number" placeholder="0">
+                                <input id="costo_compra" class="form-control" type="number" placeholder="0" runat="server">
                             </div>
                         </div>
                         <!----------------------------------->
                         <div class="form-group row">
                             <label for="stock" class="col-sm-4 col-form-label">Stock</label>
                             <div class="col-sm-8">
-                                <input id="stock" class="form-control" type="number" placeholder="0">
+                                <input id="stock" class="form-control" type="number" placeholder="0" runat="server">
                             </div>
                         </div>
                         <!----------------------------------->                    
@@ -90,7 +90,7 @@
                         <div class="form-group row">
                             <label for="fecha_registro" class="col-sm-4 col-form-label">Fecha de Registro</label>
                             <div class="col-sm-8">
-                                <input id="fecha_registro" class="form-control" type="date" min="1000-01-01" max="3000-12-31">
+                                <input id="fecha_registro" class="form-control" type="date" min="1000-01-01" max="3000-12-31" runat="server">
                             </div>
                         </div>
                       <!------------------------------------->
@@ -98,7 +98,7 @@
                             <label for="unidad_medida" class="col-sm-4 col-form-label">Unidad de Medida</label>
                             <div class="col-sm-8">
                                 <!--<input id="unidad_medida" class="form-control" type="text" placeholder="Default input">-->
-                                <select class="form-control" id="unidad_medida">
+                                <select class="form-control" id="unidad_medida" runat="server">
                                       <option>1</option>
                                       <option>2</option>
                                       <option>3</option>
@@ -111,7 +111,7 @@
                         <div class="form-group row">
                           <label for="fecha_caducidad" class="col-sm-4 col-form-label">Fecha de caducidad</label>
                           <div class="col-sm-8">
-                              <input id="fecha_caducidad" class="form-control" type="date" min="1000-01-01" max="3000-12-31" >
+                              <input id="fecha_caducidad" class="form-control" type="date" min="1000-01-01" max="3000-12-31" runat="server">
                           </div>
                       </div>   
                       <!------------------------------------->
@@ -119,7 +119,7 @@
                             <label for="departamento" class="col-sm-4 col-form-label">Departamento</label>
                             <div class="col-sm-8">
                                 <!--<input id="departamento" class="form-control" type="text" placeholder="Default input">-->
-                                <select class="form-control" id="departamento">
+                                <select class="form-control" id="departamento" runat="server">
                                       <option>1</option>
                                       <option>2</option>
                                       <option>3</option>
@@ -149,7 +149,7 @@
             <div class="col-sm-3">
                         <div class="form-group row">
                            <div class="col-sm-8">
-                                <input id="buscar" class="form-control" type="text" placeholder="Buscar">
+                                <input id="buscar" class="form-control" type="text" placeholder="Buscar" runat="server">
                             </div>
                             <div class="col-sm-2">
                             <button type="button" class="btn btn-success">Buscar</button>
