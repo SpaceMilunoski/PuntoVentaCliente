@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://microsoft.com/webservices/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://microsoft.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/webservices/">
+      <s:element name="ConsultarUnidades">
+        <s:complexType />
+      </s:element>
+      <s:element name="ConsultarUnidadesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarUnidadesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarUnidad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="unidad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarUnidadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertarUnidadResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarUnidad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarUnidadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EliminarUnidadResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultarUnidadesSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarUnidades" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarUnidadesSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarUnidadesResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertarUnidadSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarUnidad" />
+  </wsdl:message>
+  <wsdl:message name="InsertarUnidadSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarUnidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarUnidadSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarUnidad" />
+  </wsdl:message>
+  <wsdl:message name="EliminarUnidadSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarUnidadResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSUnidadesSoap">
+    <wsdl:operation name="ConsultarUnidades">
+      <wsdl:input message="tns:ConsultarUnidadesSoapIn" />
+      <wsdl:output message="tns:ConsultarUnidadesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarUnidad">
+      <wsdl:input message="tns:InsertarUnidadSoapIn" />
+      <wsdl:output message="tns:InsertarUnidadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUnidad">
+      <wsdl:input message="tns:EliminarUnidadSoapIn" />
+      <wsdl:output message="tns:EliminarUnidadSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSUnidadesSoap" type="tns:WSUnidadesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultarUnidades">
+      <soap:operation soapAction="http://microsoft.com/webservices/ConsultarUnidades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarUnidad">
+      <soap:operation soapAction="http://microsoft.com/webservices/InsertarUnidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUnidad">
+      <soap:operation soapAction="http://microsoft.com/webservices/EliminarUnidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSUnidadesSoap12" type="tns:WSUnidadesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultarUnidades">
+      <soap12:operation soapAction="http://microsoft.com/webservices/ConsultarUnidades" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarUnidad">
+      <soap12:operation soapAction="http://microsoft.com/webservices/InsertarUnidad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUnidad">
+      <soap12:operation soapAction="http://microsoft.com/webservices/EliminarUnidad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSUnidades">
+    <wsdl:port name="WSUnidadesSoap" binding="tns:WSUnidadesSoap">
+      <soap:address location="http://puntoventaservidor.azurewebsites.net/WebService/WSUnidades.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSUnidadesSoap12" binding="tns:WSUnidadesSoap12">
+      <soap12:address location="http://puntoventaservidor.azurewebsites.net/WebService/WSUnidades.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

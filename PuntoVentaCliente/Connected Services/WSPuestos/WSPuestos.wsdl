@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://microsoft.com/webservices/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://microsoft.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/webservices/">
+      <s:element name="ConsultarPuestos">
+        <s:complexType />
+      </s:element>
+      <s:element name="ConsultarPuestosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarPuestosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarPuesto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="puesto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarPuestoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertarPuestoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarPuesto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarPuestoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EliminarPuestoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultarPuestosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarPuestos" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPuestosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarPuestosResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertarPuestoSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarPuesto" />
+  </wsdl:message>
+  <wsdl:message name="InsertarPuestoSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarPuestoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarPuestoSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarPuesto" />
+  </wsdl:message>
+  <wsdl:message name="EliminarPuestoSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarPuestoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSPuestosSoap">
+    <wsdl:operation name="ConsultarPuestos">
+      <wsdl:input message="tns:ConsultarPuestosSoapIn" />
+      <wsdl:output message="tns:ConsultarPuestosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarPuesto">
+      <wsdl:input message="tns:InsertarPuestoSoapIn" />
+      <wsdl:output message="tns:InsertarPuestoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPuesto">
+      <wsdl:input message="tns:EliminarPuestoSoapIn" />
+      <wsdl:output message="tns:EliminarPuestoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSPuestosSoap" type="tns:WSPuestosSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultarPuestos">
+      <soap:operation soapAction="http://microsoft.com/webservices/ConsultarPuestos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarPuesto">
+      <soap:operation soapAction="http://microsoft.com/webservices/InsertarPuesto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPuesto">
+      <soap:operation soapAction="http://microsoft.com/webservices/EliminarPuesto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSPuestosSoap12" type="tns:WSPuestosSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultarPuestos">
+      <soap12:operation soapAction="http://microsoft.com/webservices/ConsultarPuestos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarPuesto">
+      <soap12:operation soapAction="http://microsoft.com/webservices/InsertarPuesto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPuesto">
+      <soap12:operation soapAction="http://microsoft.com/webservices/EliminarPuesto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSPuestos">
+    <wsdl:port name="WSPuestosSoap" binding="tns:WSPuestosSoap">
+      <soap:address location="http://puntoventaservidor.azurewebsites.net/WebService/WSPuestos.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSPuestosSoap12" binding="tns:WSPuestosSoap12">
+      <soap12:address location="http://puntoventaservidor.azurewebsites.net/WebService/WSPuestos.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

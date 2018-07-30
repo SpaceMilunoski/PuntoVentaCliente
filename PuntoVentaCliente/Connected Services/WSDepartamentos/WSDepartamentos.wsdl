@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://microsoft.com/webservices/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://microsoft.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/webservices/">
+      <s:element name="ConsultarDepartamentos">
+        <s:complexType />
+      </s:element>
+      <s:element name="ConsultarDepartamentosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarDepartamentosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarDepartamento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="departamento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarDepartamentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertarDepartamentoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarDepartamento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarDepartamentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EliminarDepartamentoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultarDepartamentosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarDepartamentos" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarDepartamentosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarDepartamentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertarDepartamentoSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="InsertarDepartamentoSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarDepartamentoSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="EliminarDepartamentoSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSDepartamentosSoap">
+    <wsdl:operation name="ConsultarDepartamentos">
+      <wsdl:input message="tns:ConsultarDepartamentosSoapIn" />
+      <wsdl:output message="tns:ConsultarDepartamentosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarDepartamento">
+      <wsdl:input message="tns:InsertarDepartamentoSoapIn" />
+      <wsdl:output message="tns:InsertarDepartamentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarDepartamento">
+      <wsdl:input message="tns:EliminarDepartamentoSoapIn" />
+      <wsdl:output message="tns:EliminarDepartamentoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSDepartamentosSoap" type="tns:WSDepartamentosSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultarDepartamentos">
+      <soap:operation soapAction="http://microsoft.com/webservices/ConsultarDepartamentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarDepartamento">
+      <soap:operation soapAction="http://microsoft.com/webservices/InsertarDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarDepartamento">
+      <soap:operation soapAction="http://microsoft.com/webservices/EliminarDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSDepartamentosSoap12" type="tns:WSDepartamentosSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultarDepartamentos">
+      <soap12:operation soapAction="http://microsoft.com/webservices/ConsultarDepartamentos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarDepartamento">
+      <soap12:operation soapAction="http://microsoft.com/webservices/InsertarDepartamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarDepartamento">
+      <soap12:operation soapAction="http://microsoft.com/webservices/EliminarDepartamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSDepartamentos">
+    <wsdl:port name="WSDepartamentosSoap" binding="tns:WSDepartamentosSoap">
+      <soap:address location="http://puntoventaservidor.azurewebsites.net/WebService/WSDepartamentos.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSDepartamentosSoap12" binding="tns:WSDepartamentosSoap12">
+      <soap12:address location="http://puntoventaservidor.azurewebsites.net/WebService/WSDepartamentos.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

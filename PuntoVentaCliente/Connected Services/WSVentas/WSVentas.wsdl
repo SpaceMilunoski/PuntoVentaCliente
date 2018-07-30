@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://microsoft.com/webservices/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://microsoft.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/webservices/">
+      <s:element name="ConsultarVentas">
+        <s:complexType />
+      </s:element>
+      <s:element name="ConsultarVentasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarVentasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarVentaGeneral">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarVentaGeneralResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertarVentaGeneralResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarVentaDetalles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarVentaDetallesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertarVentaDetallesResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarVentas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="empleado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechaInicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarVentasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarVentasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DetallesVenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DetallesVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DetallesVentaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultarVentasSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarVentas" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarVentasSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarVentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertarVentaGeneralSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarVentaGeneral" />
+  </wsdl:message>
+  <wsdl:message name="InsertarVentaGeneralSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarVentaGeneralResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertarVentaDetallesSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarVentaDetalles" />
+  </wsdl:message>
+  <wsdl:message name="InsertarVentaDetallesSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarVentaDetallesResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarVentasSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarVentas" />
+  </wsdl:message>
+  <wsdl:message name="BuscarVentasSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarVentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="DetallesVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:DetallesVenta" />
+  </wsdl:message>
+  <wsdl:message name="DetallesVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:DetallesVentaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSVentasSoap">
+    <wsdl:operation name="ConsultarVentas">
+      <wsdl:input message="tns:ConsultarVentasSoapIn" />
+      <wsdl:output message="tns:ConsultarVentasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarVentaGeneral">
+      <wsdl:input message="tns:InsertarVentaGeneralSoapIn" />
+      <wsdl:output message="tns:InsertarVentaGeneralSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarVentaDetalles">
+      <wsdl:input message="tns:InsertarVentaDetallesSoapIn" />
+      <wsdl:output message="tns:InsertarVentaDetallesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarVentas">
+      <wsdl:input message="tns:BuscarVentasSoapIn" />
+      <wsdl:output message="tns:BuscarVentasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DetallesVenta">
+      <wsdl:input message="tns:DetallesVentaSoapIn" />
+      <wsdl:output message="tns:DetallesVentaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSVentasSoap" type="tns:WSVentasSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultarVentas">
+      <soap:operation soapAction="http://microsoft.com/webservices/ConsultarVentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarVentaGeneral">
+      <soap:operation soapAction="http://microsoft.com/webservices/InsertarVentaGeneral" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarVentaDetalles">
+      <soap:operation soapAction="http://microsoft.com/webservices/InsertarVentaDetalles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarVentas">
+      <soap:operation soapAction="http://microsoft.com/webservices/BuscarVentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DetallesVenta">
+      <soap:operation soapAction="http://microsoft.com/webservices/DetallesVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSVentasSoap12" type="tns:WSVentasSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultarVentas">
+      <soap12:operation soapAction="http://microsoft.com/webservices/ConsultarVentas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarVentaGeneral">
+      <soap12:operation soapAction="http://microsoft.com/webservices/InsertarVentaGeneral" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarVentaDetalles">
+      <soap12:operation soapAction="http://microsoft.com/webservices/InsertarVentaDetalles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarVentas">
+      <soap12:operation soapAction="http://microsoft.com/webservices/BuscarVentas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DetallesVenta">
+      <soap12:operation soapAction="http://microsoft.com/webservices/DetallesVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSVentas">
+    <wsdl:port name="WSVentasSoap" binding="tns:WSVentasSoap">
+      <soap:address location="http://puntoventaservidor.azurewebsites.net/WebService/WSVentas.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSVentasSoap12" binding="tns:WSVentasSoap12">
+      <soap12:address location="http://puntoventaservidor.azurewebsites.net/WebService/WSVentas.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
