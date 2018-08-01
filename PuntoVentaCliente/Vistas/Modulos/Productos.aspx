@@ -18,6 +18,7 @@
                             <label for="nombre" class="col-sm-4 col-form-label">Nombre</label>
                             <div class="col-sm-8">
                                 <input id="nombre" class="form-control" type="text" placeholder="Default input">
+
                             </div>
                         </div>
                         <!----------------------------------->

@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 
 
-namespace BibliotecaSI.Models
+namespace PuntoVentaCliente.Modelos
 {
     public class Encryption
     {
