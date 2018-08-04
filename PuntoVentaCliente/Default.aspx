@@ -52,12 +52,12 @@
 
             <div class="form-group">
                 <label for="user" class="label-pv">Usuario</label>
-                <asp:TextBox ID="txtbUser" runat="server" type="text" class="form-control" name="user" placeholder="Introduzca su nombre de usuario" MaxLength="500"></asp:TextBox>
+                <asp:TextBox ID="txtbUser" runat="server" class="form-control" placeholder="Introduzca su nombre de usuario" MaxLength="10" AutoCompleteType="Disabled" AUTOCOMPLETE="off"></asp:TextBox>
             </div>
 
             <div class="form-group">
                 <label for="password" class="label-pv">Contraseña</label>
-                <asp:TextBox ID="txtbPassword" runat="server" type="text" class="form-control" name="password" placeholder="Introduzca su contraseña" MaxLength="32" TextMode="Password"></asp:TextBox>
+                <asp:TextBox ID="txtbPassword" runat="server" class="form-control" placeholder="Introduzca su contraseña" MaxLength="8" TextMode="Password" AutoCompleteType="Disabled" AUTOCOMPLETE="off"> </asp:TextBox>
             </div>
 
             <asp:Button ID="btnIngresar" runat="server" Text="Acceder" class="btn btn-block btn-pv" center-align="true" OnClick="btnAcceder_Click" />

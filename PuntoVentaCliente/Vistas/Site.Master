@@ -58,7 +58,7 @@
                         <li><a runat="server" href="~/Vistas/Menu">Inicio</a></li>
                         <li><a runat="server" href="~/Vistas/Modulos/Proveedores">Proveedores</a></li>
                         <li><a runat="server" href="~/Vistas/Modulos/Productos">Productos</a></li>
-                        <li><asp:LinkButton ID="lbEmpleados" runat="server" Text="Usuarios" Visible="false" OnClick="lbEmpleados_Click"></asp:LinkButton></li>
+                        <li><asp:LinkButton ID="lbEmpleados" runat="server" Text="Empleados" Visible="false" OnClick="lbEmpleados_Click"></asp:LinkButton></li>
                         <li><a runat="server" href="~/Vistas/Modulos/Ventas">Ventas</a></li>
                         <li> <asp:LinkButton ID="lbReportes" runat="server" Text="Reportes" Visible="false" OnClick="lbReportes_Click"></asp:LinkButton> </li>
                         <li><a runat="server" href="~/Vistas/About">Acerca de</a></li>

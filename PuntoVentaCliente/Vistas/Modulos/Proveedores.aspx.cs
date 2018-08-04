@@ -28,7 +28,13 @@ namespace PuntoVentaCliente.Vistas.Modulos
                 if (!IsPostBack) {
                     GridView_Proveedores.DataBind();
                     btnInsertar.Text = "Agregar";
+
+                    mostrarCampos();
+
+                    txtbId.Text = "0";
                 }
+
+                
 
             } catch (Exception ex) {
                 ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "swal(\"Error\", \"Error del servidor.\", \"error\");", true);
@@ -104,17 +110,31 @@ namespace PuntoVentaCliente.Vistas.Modulos
 
                 if (btnInsertar.Text == "Agregar") {
 
-                    if (wsProveedores.InsertarProveedores(json))
+                    if (wsProveedores.InsertarProveedores(json)) {
                         ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "swal(\"Successful\", \"Operacion realizada con exito.\", \"success\");", true);
-                    else
+
+                        mostrarCampos();
+
+                        cargarTabla();
+                        GridView_Proveedores.DataBind();
+
+                        ocultarCampos();
+
+
+                    } else
                         ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "swal(\"Error\", \"Error del servidor.\", \"error\");", true);
 
                 } else if (btnInsertar.Text == "Actualizar") {
 
                     if (wsProveedores.ActualizarProveedores(json)) {
                         ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "swal(\"Successful\", \"Operacion realizada con exito.\", \"success\");", true);
+                       mostrarCampos();
+
                         cargarTabla();
                         GridView_Proveedores.DataBind();
+
+                        ocultarCampos();
+
                     } else
                         ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "swal(\"Error\", \"Error del servidor.\", \"error\");", true);
 
@@ -139,10 +159,14 @@ namespace PuntoVentaCliente.Vistas.Modulos
         {
             try
             {
+                mostrarCampos();
+
                 DataTable dt = (DataTable)JsonConvert.DeserializeObject(wsProveedores.BuscarProveedores(txtbBusqueda.Text), typeof(DataTable));
                 GridView_Proveedores.DataSource = dt;
                 
                 GridView_Proveedores.DataBind();
+
+                ocultarCampos();
 
                 txtbBusqueda.Text = string.Empty;
             }
@@ -151,5 +175,16 @@ namespace PuntoVentaCliente.Vistas.Modulos
                 ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "swal(\"Error\", \"Error del servidor.\", \"error\");", true);
             }
         }
+
+        private void mostrarCampos()
+        {
+            GridView_Proveedores.Columns[0].Visible = true;
+        }
+
+        private void ocultarCampos()
+        {
+            GridView_Proveedores.Columns[0].Visible = false;
+        }
+
     }
 }
