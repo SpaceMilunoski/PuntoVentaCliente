@@ -1,9 +1,9 @@
-﻿using BibliotecaSI.Models;
+﻿//using BibliotecaSI.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using PuntoVentaCliente.Modelos;
 using PuntoVentaCliente.WSEmpleados;
-using PuntoVentaServidor.Modelos;
+//using PuntoVentaServidor.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Data;
