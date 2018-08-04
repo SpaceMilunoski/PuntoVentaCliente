@@ -96,7 +96,7 @@
                     <Columns>
 
                         <%--campos no editables...--%>
-                        <asp:BoundField DataField="Id" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="id" visible="true"/>
+                        <asp:BoundField DataField="Id" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="id"/>
                         <asp:BoundField DataField="RazonSocial" HeaderText="Razon Social" InsertVisible="False" ReadOnly="True" SortExpression="RazonSocial" />
                         <asp:BoundField DataField="DireccionFiscal" HeaderText="Direccion Fiscal" ReadOnly="True" SortExpression="DireccionFiscal" />
                         <asp:BoundField DataField="DireccionUbicacion" HeaderText="Direccion ubicacion" ReadOnly="True" SortExpression="DireccionUbicacion" />
@@ -110,7 +110,7 @@
                             <ItemTemplate>
                                 <%--Botones de eliminar y editar cliente...--%>
                                 <!-- <asp:Button ID="btnDelete" runat="server" Text="Eliminar" CssClass="btn btn-danger" CommandName="Eliminar" OnClientClick="return confirm('¿Eliminar registro?'); " CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" /> -->
-                                <asp:Button ID="btnEdit" runat="server" Text="Editar" CssClass="btn btn-info" CommandName="Editar" OnClientClick="return confirm('¿Editar registro?'); " CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />
+                                <asp:Button ID="btnEdit" runat="server" Text="Editar" CssClass="btn btn-info" CommandName="Editar" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />
                             </ItemTemplate>
                         </asp:TemplateField>
 

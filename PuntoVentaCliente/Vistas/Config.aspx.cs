@@ -24,6 +24,10 @@ namespace PuntoVentaCliente.Vistas
 
                 user = JsonConvert.DeserializeObject<Usuarios>(empleados.UsuarioDatos(Convert.ToString(Session["User"])));
                 
+                if (!IsPostBack) {
+                    txtbUserName.Text = user.Usuario;
+                    txtbPassword.Text = string.Empty;
+                }
 
             } catch (Exception) {
                 ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "swal(\"Error\", \"El servidor esta en mantenimiento, regrese mas tarde.\", \"error\");", true);
@@ -52,7 +56,12 @@ namespace PuntoVentaCliente.Vistas
                         string json = JsonConvert.SerializeObject(user);
 
                         if (empleados.UsuarioActualizar(json))
+                        {
                             ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "swal(\"Successful\", \"Operacion realizada con exito.\", \"success\");", true);
+                            
+                            Session["User"] = user.Usuario;
+
+                        }
                         else
                             ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "swal(\"Error\", \"El servidor esta en mantenimiento, regrese mas tarde.\", \"error\");", true);
 

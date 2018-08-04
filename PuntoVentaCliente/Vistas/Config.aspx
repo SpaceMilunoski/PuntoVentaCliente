@@ -30,7 +30,7 @@
         <br />
 
          <div class="form-group"> <!-- Button -->
-            <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" class="btn btn-primary" OnClientClick="return confirm('¿Realizar accion?'); " OnClick="btnInsertar_Click"/>
+            <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" class="btn btn-primary" OnClick="btnInsertar_Click"/>
         </div>
         
     </div>

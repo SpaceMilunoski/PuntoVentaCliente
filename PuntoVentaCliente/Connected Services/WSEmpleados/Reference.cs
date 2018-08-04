@@ -15,14 +15,14 @@ namespace PuntoVentaCliente.WSEmpleados {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://microsoft.com/webservices/", ConfigurationName="WSEmpleados.WSEmpleadosSoap")]
     public interface WSEmpleadosSoap {
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento ConsultarEmpleadosResult del espacio de nombres http://microsoft.com/webservices/ no está marcado para aceptar valores nil.
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento usuario del espacio de nombres http://microsoft.com/webservices/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://microsoft.com/webservices/ConsultarEmpleados", ReplyAction="*")]
         PuntoVentaCliente.WSEmpleados.ConsultarEmpleadosResponse ConsultarEmpleados(PuntoVentaCliente.WSEmpleados.ConsultarEmpleadosRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://microsoft.com/webservices/ConsultarEmpleados", ReplyAction="*")]
         System.Threading.Tasks.Task<PuntoVentaCliente.WSEmpleados.ConsultarEmpleadosResponse> ConsultarEmpleadosAsync(PuntoVentaCliente.WSEmpleados.ConsultarEmpleadosRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento json del espacio de nombres http://microsoft.com/webservices/ no está marcado para aceptar valores nil.
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento jsonEmpleado del espacio de nombres http://microsoft.com/webservices/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://microsoft.com/webservices/InsertarEmpleados", ReplyAction="*")]
         PuntoVentaCliente.WSEmpleados.InsertarEmpleadosResponse InsertarEmpleados(PuntoVentaCliente.WSEmpleados.InsertarEmpleadosRequest request);
         
@@ -91,10 +91,17 @@ namespace PuntoVentaCliente.WSEmpleados {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://microsoft.com/webservices/")]
     public partial class ConsultarEmpleadosRequestBody {
         
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string usuario;
+        
         public ConsultarEmpleadosRequestBody() {
+        }
+        
+        public ConsultarEmpleadosRequestBody(string usuario) {
+            this.usuario = usuario;
         }
     }
     
@@ -156,13 +163,17 @@ namespace PuntoVentaCliente.WSEmpleados {
     public partial class InsertarEmpleadosRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string json;
+        public string jsonEmpleado;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string jsonUsuario;
         
         public InsertarEmpleadosRequestBody() {
         }
         
-        public InsertarEmpleadosRequestBody(string json) {
-            this.json = json;
+        public InsertarEmpleadosRequestBody(string jsonEmpleado, string jsonUsuario) {
+            this.jsonEmpleado = jsonEmpleado;
+            this.jsonUsuario = jsonUsuario;
         }
     }
     
@@ -298,11 +309,15 @@ namespace PuntoVentaCliente.WSEmpleados {
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
         public string busqueda;
         
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string usuario;
+        
         public BuscarEmpleadoRequestBody() {
         }
         
-        public BuscarEmpleadoRequestBody(string busqueda) {
+        public BuscarEmpleadoRequestBody(string busqueda, string usuario) {
             this.busqueda = busqueda;
+            this.usuario = usuario;
         }
     }
     
@@ -580,9 +595,10 @@ namespace PuntoVentaCliente.WSEmpleados {
             return base.Channel.ConsultarEmpleados(request);
         }
         
-        public string ConsultarEmpleados() {
+        public string ConsultarEmpleados(string usuario) {
             PuntoVentaCliente.WSEmpleados.ConsultarEmpleadosRequest inValue = new PuntoVentaCliente.WSEmpleados.ConsultarEmpleadosRequest();
             inValue.Body = new PuntoVentaCliente.WSEmpleados.ConsultarEmpleadosRequestBody();
+            inValue.Body.usuario = usuario;
             PuntoVentaCliente.WSEmpleados.ConsultarEmpleadosResponse retVal = ((PuntoVentaCliente.WSEmpleados.WSEmpleadosSoap)(this)).ConsultarEmpleados(inValue);
             return retVal.Body.ConsultarEmpleadosResult;
         }
@@ -592,9 +608,10 @@ namespace PuntoVentaCliente.WSEmpleados {
             return base.Channel.ConsultarEmpleadosAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PuntoVentaCliente.WSEmpleados.ConsultarEmpleadosResponse> ConsultarEmpleadosAsync() {
+        public System.Threading.Tasks.Task<PuntoVentaCliente.WSEmpleados.ConsultarEmpleadosResponse> ConsultarEmpleadosAsync(string usuario) {
             PuntoVentaCliente.WSEmpleados.ConsultarEmpleadosRequest inValue = new PuntoVentaCliente.WSEmpleados.ConsultarEmpleadosRequest();
             inValue.Body = new PuntoVentaCliente.WSEmpleados.ConsultarEmpleadosRequestBody();
+            inValue.Body.usuario = usuario;
             return ((PuntoVentaCliente.WSEmpleados.WSEmpleadosSoap)(this)).ConsultarEmpleadosAsync(inValue);
         }
         
@@ -603,10 +620,11 @@ namespace PuntoVentaCliente.WSEmpleados {
             return base.Channel.InsertarEmpleados(request);
         }
         
-        public bool InsertarEmpleados(string json) {
+        public bool InsertarEmpleados(string jsonEmpleado, string jsonUsuario) {
             PuntoVentaCliente.WSEmpleados.InsertarEmpleadosRequest inValue = new PuntoVentaCliente.WSEmpleados.InsertarEmpleadosRequest();
             inValue.Body = new PuntoVentaCliente.WSEmpleados.InsertarEmpleadosRequestBody();
-            inValue.Body.json = json;
+            inValue.Body.jsonEmpleado = jsonEmpleado;
+            inValue.Body.jsonUsuario = jsonUsuario;
             PuntoVentaCliente.WSEmpleados.InsertarEmpleadosResponse retVal = ((PuntoVentaCliente.WSEmpleados.WSEmpleadosSoap)(this)).InsertarEmpleados(inValue);
             return retVal.Body.InsertarEmpleadosResult;
         }
@@ -616,10 +634,11 @@ namespace PuntoVentaCliente.WSEmpleados {
             return base.Channel.InsertarEmpleadosAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PuntoVentaCliente.WSEmpleados.InsertarEmpleadosResponse> InsertarEmpleadosAsync(string json) {
+        public System.Threading.Tasks.Task<PuntoVentaCliente.WSEmpleados.InsertarEmpleadosResponse> InsertarEmpleadosAsync(string jsonEmpleado, string jsonUsuario) {
             PuntoVentaCliente.WSEmpleados.InsertarEmpleadosRequest inValue = new PuntoVentaCliente.WSEmpleados.InsertarEmpleadosRequest();
             inValue.Body = new PuntoVentaCliente.WSEmpleados.InsertarEmpleadosRequestBody();
-            inValue.Body.json = json;
+            inValue.Body.jsonEmpleado = jsonEmpleado;
+            inValue.Body.jsonUsuario = jsonUsuario;
             return ((PuntoVentaCliente.WSEmpleados.WSEmpleadosSoap)(this)).InsertarEmpleadosAsync(inValue);
         }
         
@@ -663,10 +682,11 @@ namespace PuntoVentaCliente.WSEmpleados {
             return base.Channel.BuscarEmpleado(request);
         }
         
-        public string BuscarEmpleado(string busqueda) {
+        public string BuscarEmpleado(string busqueda, string usuario) {
             PuntoVentaCliente.WSEmpleados.BuscarEmpleadoRequest inValue = new PuntoVentaCliente.WSEmpleados.BuscarEmpleadoRequest();
             inValue.Body = new PuntoVentaCliente.WSEmpleados.BuscarEmpleadoRequestBody();
             inValue.Body.busqueda = busqueda;
+            inValue.Body.usuario = usuario;
             PuntoVentaCliente.WSEmpleados.BuscarEmpleadoResponse retVal = ((PuntoVentaCliente.WSEmpleados.WSEmpleadosSoap)(this)).BuscarEmpleado(inValue);
             return retVal.Body.BuscarEmpleadoResult;
         }
@@ -676,10 +696,11 @@ namespace PuntoVentaCliente.WSEmpleados {
             return base.Channel.BuscarEmpleadoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PuntoVentaCliente.WSEmpleados.BuscarEmpleadoResponse> BuscarEmpleadoAsync(string busqueda) {
+        public System.Threading.Tasks.Task<PuntoVentaCliente.WSEmpleados.BuscarEmpleadoResponse> BuscarEmpleadoAsync(string busqueda, string usuario) {
             PuntoVentaCliente.WSEmpleados.BuscarEmpleadoRequest inValue = new PuntoVentaCliente.WSEmpleados.BuscarEmpleadoRequest();
             inValue.Body = new PuntoVentaCliente.WSEmpleados.BuscarEmpleadoRequestBody();
             inValue.Body.busqueda = busqueda;
+            inValue.Body.usuario = usuario;
             return ((PuntoVentaCliente.WSEmpleados.WSEmpleadosSoap)(this)).BuscarEmpleadoAsync(inValue);
         }
         
