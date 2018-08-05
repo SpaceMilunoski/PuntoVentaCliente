@@ -1,16 +1,11 @@
-<<<<<<< HEAD
-﻿//using BibliotecaSI.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using PuntoVentaCliente.Modelos;
 using PuntoVentaCliente.WSEmpleados;
-//using PuntoVentaServidor.Modelos;
-=======
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using PuntoVentaCliente.Modelos;
 using PuntoVentaCliente.WSEmpleados;
->>>>>>> bac7d6c7d2ee86572735b002d55fa2e4671e33b9
 using System;
 using System.Web.UI;
 

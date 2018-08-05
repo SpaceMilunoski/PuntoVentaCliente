@@ -31,6 +31,15 @@ namespace PuntoVentaCliente.Vistas.Modulos {
         protected global::System.Web.UI.WebControls.TextBox nombre;
         
         /// <summary>
+        /// Control marca.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox marca;
+        
+        /// <summary>
         /// Control ddmarca.
         /// </summary>
         /// <remarks>
@@ -40,15 +49,6 @@ namespace PuntoVentaCliente.Vistas.Modulos {
         protected global::System.Web.UI.WebControls.DropDownList ddmarca;
         
         /// <summary>
-        /// Control ddIdmarca.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddIdmarca;
-        
-        /// <summary>
         /// Control ddproveedor.
         /// </summary>
         /// <remarks>
@@ -56,15 +56,6 @@ namespace PuntoVentaCliente.Vistas.Modulos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddproveedor;
-        
-        /// <summary>
-        /// Control ddIdproveedor.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddIdproveedor;
         
         /// <summary>
         /// Control descripcion.
@@ -103,15 +94,6 @@ namespace PuntoVentaCliente.Vistas.Modulos {
         protected global::System.Web.UI.WebControls.TextBox stock;
         
         /// <summary>
-        /// Control fecha_registro.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox fecha_registro;
-        
-        /// <summary>
         /// Control ddunidad_medida.
         /// </summary>
         /// <remarks>
@@ -121,24 +103,6 @@ namespace PuntoVentaCliente.Vistas.Modulos {
         protected global::System.Web.UI.WebControls.DropDownList ddunidad_medida;
         
         /// <summary>
-        /// Control ddIdunidad_medida.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddIdunidad_medida;
-        
-        /// <summary>
-        /// Control fecha_caducidad.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox fecha_caducidad;
-        
-        /// <summary>
         /// Control dddepartamento.
         /// </summary>
         /// <remarks>
@@ -146,15 +110,6 @@ namespace PuntoVentaCliente.Vistas.Modulos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList dddepartamento;
-        
-        /// <summary>
-        /// Control ddIddepartamento.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddIddepartamento;
         
         /// <summary>
         /// Control btnAgregar.

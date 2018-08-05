@@ -8,7 +8,7 @@
                 <div class="form-group">
                     <div class="col-sm-3" style="background-color:white;">
                         <div class="form-group row">
-                            <label for="identificador" class="col-sm-4 col-form-label">Identificador</label>
+                            <label for="identificador" class="col-sm-4 col-form-label">Codigo</label>
                             <div class="col-sm-8">
                                 <asp:TextBox id="identificador" class="form-control" type="text" placeholder="" runat="server"></asp:TextBox>
                             </div>
@@ -22,12 +22,10 @@
                         </div>
                         <!----------------------------------->
                         <div class="form-group row">
-                            <label for="ddmarca" class="col-sm-4 col-form-label">Marca</label>
+                            <label for="marca" class="col-sm-4 col-form-label">Marca</label>
                             <div class="col-sm-8">
-                                <!--<input id="marca" class="form-control" type="text" placeholder="Default input">-->
-                                <asp:DropDownList CssClass="form-control" id="ddmarca" runat="server"></asp:DropDownList>
-                                <asp:DropDownList CssClass="form-control" id="ddIdmarca" runat="server" Visible="false"></asp:DropDownList>
-                                
+                                <asp:TextBox  id="marca" class="form-control" type="text" placeholder="Default input" runat="server"></asp:TextBox>
+                                <!--<asp:DropDownList CssClass="form-control" id="ddmarca" runat="server"></asp:DropDownList>-->
                             </div>
                         </div>
                         <!----------------------------------->
@@ -36,7 +34,6 @@
                             <div class="col-sm-8">
                                 <!--<input id="proveedor" class="form-control" type="text" placeholder="Default input">-->
                                 <asp:DropDownList CssClass="form-control" id="ddproveedor" runat="server"></asp:DropDownList>
-                                <asp:DropDownList CssClass="form-control" id="ddIdproveedor" runat="server" Visible="false"></asp:DropDownList>    
                             </div>
                         </div>
                         <!----------------------------------->
@@ -74,35 +71,33 @@
                         <!----------------------------------->                    
                     </div>
                     <div class="col-sm-3" style="background-color:white;">
-                        <div class="form-group row">
+                        <%--<div class="form-group row">
                             <label for="fecha_registro" class="col-sm-4 col-form-label">Fecha de Registro</label>
                             <div class="col-sm-8">
                                 <asp:TextBox id="fecha_registro" class="form-control" type="date" min="1000-01-01" max="3000-12-31" runat="server"></asp:TextBox>
                             </div>
-                        </div>
+                        </div>--%>
                       <!------------------------------------->
                         <div class="form-group row">
                             <label for="ddunidad_medida" class="col-sm-4 col-form-label">Unidad de Medida</label>
                             <div class="col-sm-8">
                                 <!--<input id="unidad_medida" class="form-control" type="text" placeholder="Default input">-->
                                 <asp:DropDownList CssClass="form-control" id="ddunidad_medida" runat="server"></asp:DropDownList>
-                                <asp:DropDownList CssClass="form-control" id="ddIdunidad_medida" runat="server" Visible="false"></asp:DropDownList>
                             </div>
                         </div>    
                       <!------------------------------------->
-                        <div class="form-group row">
+                        <%--<div class="form-group row">
                           <label for="fecha_caducidad" class="col-sm-4 col-form-label">Fecha de caducidad</label>
                           <div class="col-sm-8">
                               <asp:TextBox id="fecha_caducidad" class="form-control" type="date" min="1000-01-01" max="3000-12-31" runat="server" ></asp:TextBox>
                           </div>
-                      </div>   
+                      </div>   --%>
                       <!------------------------------------->
                         <div class="form-group row">
                             <label for="dddepartamento" class="col-sm-4 col-form-label">Departamento</label>
                             <div class="col-sm-8">
                                 <!--<input id="departamento" class="form-control" type="text" placeholder="Default input">-->
                                 <asp:DropDownList CssClass="form-control" id="dddepartamento" runat="server" ></asp:DropDownList>
-                                <asp:DropDownList CssClass="form-control" id="ddIddepartamento" runat="server" Visible="false"></asp:DropDownList>
                             </div>
                         </div>   
                       <!------------------------------------->                                                                  
@@ -111,11 +106,11 @@
             </form>
                     <div class="col-sm-3" style="background-color:white;">
                         <div class="form-group row">
-                            <asp:Button id="btnAgregar" runat="server" class="btn btn-success" Text="Agregar"/>
+                            <asp:Button id="btnAgregar" runat="server" class="btn btn-success" Text="Agregar" OnClick="btnAgregar_Click"/>
                         </div>
                         <!------------------------------------->
                         <div class="form-group row">
-                             <asp:Button id="btnActualizar" runat="server" class="btn btn-primary" Text="Actualizar"/>
+                             <asp:Button id="btnActualizar" runat="server" class="btn btn-primary" Text="Actualizar" OnClick="btnActualizar_Click"/>
                         </div>
                         <!--------------------------------------->
                     </div>         
@@ -147,18 +142,19 @@
                     <Columns>
 
                         <%--campos no editables...--%>
-                        <asp:BoundField DataField="Id" HeaderText="Identificador" ReadOnly="True" visible="true"/>
+                        <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" visible="true"/>
+                        <asp:BoundField DataField="Codigo" HeaderText="Codigo" ReadOnly="True" />
                         <asp:BoundField DataField="Nombre" HeaderText="Nombre" ReadOnly="True" />
                         <asp:BoundField DataField="Marca" HeaderText="Marca" ReadOnly="True" />
-                        <asp:BoundField DataField="Proveedor" HeaderText="Proveedor" ReadOnly="True" />
                         <asp:BoundField DataField="Descripcion" HeaderText="Descripción" ReadOnly="True" />
                         <asp:BoundField DataField="CostoVenta" HeaderText="Costo venta" ReadOnly="True" />
                         <asp:BoundField DataField="CostoCompra" HeaderText="Costo compra" ReadOnly="True"/>
                         <asp:BoundField DataField="Stock" HeaderText="Stock" ReadOnly="True"/>
-                        <asp:BoundField DataField="FechaRegistro" HeaderText="Fecha registro" ReadOnly="True"/>
-                        <asp:BoundField DataField="UnidadMedida" HeaderText="Unidad medida" ReadOnly="True"/>
-                        <asp:BoundField DataField="FechaCaducidad" HeaderText="Fecha caducidad" ReadOnly="True"/>
+                        <asp:BoundField DataField="Proveedor" HeaderText="Proveedor" ReadOnly="True" />
                         <asp:BoundField DataField="Departamento" HeaderText="Departamento" ReadOnly="True"/>
+                        <asp:BoundField DataField="Unidad" HeaderText="Unidad medida" ReadOnly="True"/>
+                        <%--<asp:BoundField DataField="FechaRegistro" HeaderText="Fecha registro" ReadOnly="True"/>
+                        <asp:BoundField DataField="FechaCaducidad" HeaderText="Fecha caducidad" ReadOnly="True"/>--%>
                         
                         <%--botones de acción sobre los registros...--%>
                         <asp:TemplateField ItemStyle-HorizontalAlign="Center" >
