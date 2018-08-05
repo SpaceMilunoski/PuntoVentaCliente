@@ -241,6 +241,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\WSPuestos\WSPuestos.wsdl" />
+    <Content Include="Connected Services\WSUnidades\PuntoVentaCliente.WSUnidades.EliminarUnidadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\WSUnidades\WSUnidades.wsdl" />
     <None Include="Connected Services\WSVentas\configuration91.svcinfo" />
     <None Include="Connected Services\WSVentas\configuration.svcinfo" />

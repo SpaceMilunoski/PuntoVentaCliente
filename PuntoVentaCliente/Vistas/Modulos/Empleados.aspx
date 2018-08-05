@@ -166,7 +166,7 @@
                         <asp:BoundField DataField="Empleados_Id" HeaderText="Empleados_Id" ReadOnly="True" SortExpression="Empleados_Id" />
                         
                         <%--botones de acción sobre los registros...--%>
-                        <asp:TemplateField ItemStyle-HorizontalAlign="Center" >
+                        <asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="300px" >
                             <ItemTemplate>
                                 <%--Botones de eliminar y editar cliente...--%>
                                 <asp:Button ID="btnDelete" runat="server" Text="Eliminar" CssClass="btn btn-danger" CommandName="Eliminar" OnClientClick="return confirm('¿Eliminar registro?'); " CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />

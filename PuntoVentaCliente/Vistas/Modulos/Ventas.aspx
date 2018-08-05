@@ -36,8 +36,8 @@
                         <asp:BoundField DataField="Producto" HeaderText="Producto" ReadOnly="True" SortExpression="Producto"/>
                         <asp:BoundField DataField="Marca" HeaderText="Marca" ReadOnly="True" SortExpression="Marca" />
                         <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" ReadOnly="True" SortExpression="Descripcion" />
-                        <asp:BoundField DataField="CostoVenta" HeaderText="Costo unitario" ReadOnly="True" SortExpression="CostoVenta" />
                         <asp:BoundField DataField="Proveedor" HeaderText="Proveedor" ReadOnly="True" SortExpression="Proveedor" />
+                        <asp:BoundField DataField="CostoVenta" HeaderText="Costo unitario" ReadOnly="True" SortExpression="CostoVenta" />
                         <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" ReadOnly="True" SortExpression="Cantidad" />
                         <asp:BoundField DataField="PrecioTotal" HeaderText="Costo total" ReadOnly="True" SortExpression="PrecioTotal" />
                         

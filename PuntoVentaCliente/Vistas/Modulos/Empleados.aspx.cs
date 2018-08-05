@@ -28,7 +28,7 @@ namespace PuntoVentaCliente.Vistas.Modulos
         protected void Page_Load(object sender, EventArgs e)
         {
             try {
-                //e instancian los objetos a utilizar
+                //Se instancian los objetos a utilizar
                 empleados = new Modelos.Empleados();
                 usuarios = new Modelos.Usuarios();
 

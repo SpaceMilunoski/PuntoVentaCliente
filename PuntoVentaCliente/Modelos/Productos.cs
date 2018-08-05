@@ -8,21 +8,28 @@ namespace PuntoVentaCliente.Modelos
     public class Productos
     {
         private int id;
+        private string codigo;
         private string nombre;
         private string marca;
         private string descripcion;
-        private float costoCompra;
-        private float costoVenta;
+        private Decimal costoCompra;
+        private Decimal costoVenta;
         private int stock;
-        private int proveedores_Id;
-        private int departamentos_Id;
-        private int unidades_Id;
+        private string proveedor;
+        private string departamento;
+        private string unidad;
 
         public Productos() { }
 
         public int Id {
             get => id;
             set => id = value;
+        }
+
+        public string Codigo
+        {
+            get => codigo;
+            set => codigo = value;
         }
 
         public string Nombre {
@@ -40,12 +47,12 @@ namespace PuntoVentaCliente.Modelos
             set => descripcion = value;
         }
 
-        public float CostoCompra {
+        public Decimal CostoCompra {
             get => costoCompra;
             set => costoCompra = value;
         }
 
-        public float CostoVenta {
+        public Decimal CostoVenta {
             get => costoVenta;
             set => costoVenta = value;
         }
@@ -55,19 +62,20 @@ namespace PuntoVentaCliente.Modelos
             set => stock = value;
         }
 
-        public int Proveedores_Id {
-            get => proveedores_Id;
-            set => proveedores_Id = value;
+        public string Proveedor {
+            get => proveedor;
+            set => proveedor = value;
         }
 
-        public int Departamentos_Id {
-            get => departamentos_Id;
-            set => departamentos_Id = value;
+        public string Departamento {
+            get => departamento;
+            set => departamento = value;
         }
 
-        public int Unidades_Id {
-            get => unidades_Id;
-            set => unidades_Id = value;
+        public string Unidad {
+            get => unidad;
+            set => unidad = value;
         }
+        
     }
 }
