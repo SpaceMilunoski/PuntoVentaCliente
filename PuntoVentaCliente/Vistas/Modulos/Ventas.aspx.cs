@@ -13,5 +13,20 @@ namespace PuntoVentaCliente.Vistas.Modulos
         {
 
         }
+
+        protected void GridView_Ventas_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnVenta_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -144,6 +144,9 @@
     <Content Include="Connected Services\WSDepartamentos\PuntoVentaCliente.WSDepartamentos.InsertarDepartamentoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\WSDepartamentos\PuntoVentaCliente.WSDepartamentos.EliminarDepartamentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\WSDepartamentos\WSDepartamentos.wsdl" />
     <None Include="Connected Services\WSEmpleados\configuration91.svcinfo" />
     <None Include="Connected Services\WSEmpleados\configuration.svcinfo" />
@@ -224,6 +227,9 @@
     <Content Include="Connected Services\WSPuestos\PuntoVentaCliente.WSPuestos.InsertarPuestoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\WSPuestos\PuntoVentaCliente.WSPuestos.EliminarPuestoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\WSPuestos\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -235,6 +241,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\WSPuestos\WSPuestos.wsdl" />
+    <Content Include="Connected Services\WSUnidades\PuntoVentaCliente.WSUnidades.EliminarUnidadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\WSUnidades\WSUnidades.wsdl" />
     <None Include="Connected Services\WSVentas\configuration91.svcinfo" />
     <None Include="Connected Services\WSVentas\configuration.svcinfo" />

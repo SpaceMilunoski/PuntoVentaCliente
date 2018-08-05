@@ -13,5 +13,25 @@ namespace PuntoVentaCliente.Vistas.Modulos
         {
 
         }
+
+        protected void GridView_Reportes_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
+        }
+
+        protected void GridView_Reportes_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnPDF_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

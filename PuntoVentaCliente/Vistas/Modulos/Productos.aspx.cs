@@ -113,7 +113,7 @@ namespace PuntoVentaCliente.Vistas.Modulos
                 GridViewRow row = GridView_Productos.Rows[index];
                 identificador.Text = Convert.ToString(row.Cells[0].Text);
                 if (e.CommandName == "Editar")
-                {
+                {  
                     Id = Convert.ToInt32(row.Cells[0].Text);
                     identificador.Text = row.Cells[1].Text;
                     nombre.Text = row.Cells[2].Text;

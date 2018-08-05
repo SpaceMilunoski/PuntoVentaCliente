@@ -12,8 +12,8 @@ namespace PuntoVentaCliente.Modelos
         private string nombre;
         private string marca;
         private string descripcion;
-        private float costoCompra;
-        private float costoVenta;
+        private Decimal costoCompra;
+        private Decimal costoVenta;
         private int stock;
         private string proveedor;
         private string departamento;
@@ -26,7 +26,12 @@ namespace PuntoVentaCliente.Modelos
             set => id = value;
         }
 
+<<<<<<< HEAD
         public string Codigo {
+=======
+        public string Codigo
+        {
+>>>>>>> 680b211b4cb5d995e79b849bccf6cefd083149dc
             get => codigo;
             set => codigo = value;
         }
@@ -46,12 +51,12 @@ namespace PuntoVentaCliente.Modelos
             set => descripcion = value;
         }
 
-        public float CostoCompra {
+        public Decimal CostoCompra {
             get => costoCompra;
             set => costoCompra = value;
         }
 
-        public float CostoVenta {
+        public Decimal CostoVenta {
             get => costoVenta;
             set => costoVenta = value;
         }
@@ -75,5 +80,6 @@ namespace PuntoVentaCliente.Modelos
             get => unidad;
             set => unidad = value;
         }
+        
     }
 }

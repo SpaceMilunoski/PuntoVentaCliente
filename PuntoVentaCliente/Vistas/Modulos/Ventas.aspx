@@ -1,93 +1,68 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vistas/Site.Master" AutoEventWireup="true" CodeBehind="Ventas.aspx.cs" Inherits="PuntoVentaCliente.Vistas.Modulos.Ventas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div  class="container">  
-          <h1 align="center">Ventas</h1> 
+    <div class="container">
+        <h1>Ventas</h1>
+            
+        <br />
+
         <div class="row">
-         <form>
-             <div class="col-sm-5" style="background-color:white;">
-                 <div class="form-group row">
-                     <div class="col-sm-5">
-                         <input id="buscar" class="form-control" type="text" placeholder="Buscar">
-                     </div>
-                     <div class="col-sm-3">
-                         <button type="button" class="btn btn-success">Buscar</button>
-                     </div>
-                 </div> 
-                 <div class="form-group row"> 
-                 </div>
-                 <div class="form-group row">
-                     <div class="col-sm-3">
-                         <label for="cantidad" class="col-sm-4 col-form-label">Cantidad</label>
-                     </div>
-                     <div class="col-sm-6">
-                         <input id="marca" class="form-control" type="number" placeholder="Default input">
-                     </div>
-                 </div>  
-             </div>
-             <div class="col-sm-3" style="background-color:white;">
-                 <div class="form-group row">                      
-                 </div> 
-                 <div class="form-group row">  
-                      <button type="button" class="btn btn-success">Agregar Producto</button>                    
-                 </div>               
-             </div>
-             <div class="col-sm-4" style="background-color:white;">
-                 <div class="form-group row"> 
-                     <button type="button" class="btn btn-primary">Crear Pedido de Venta</button>
-                 </div>
-                 <div class="form-group row"> 
-                 </div>
-                 <div class="row"> 
-                     <div class="row">
-                         <div class="col-sm-4" style="background-color:white;">
-                             <label for="ticket" class="col-sm-4 col-form-label">Ticket</label>  
-                         </div>    
-                         <div class="col-sm-4" style="background-color:white;">  
-                             <input id="ticket" class="form-control" type="checkbox" >
-                         </div>   
-                     </div>
-                     <div class="row">
-                         <div class="col-sm-4" style="background-color:white;"> 
-                             <label for="factura" class="col-sm-4 col-form-label">Factura</label>                               
-                         </div>  
-                         <div class="col-sm-4" style="background-color:white;"> 
-                             <input id="factura" class="form-control" type="checkbox" >  
-                         </div> 
-                     </div>                                      
-                 </div>   
-             </div>
-         </form>                                         
+            <div class="col-sm-5">
+                <div class="form-group row">
+                    <div class="col-sm-8">
+                        <asp:TextBox ID="txtbBusqueda" runat="server" type="text" class="form-control" name="buscar" placeholder="Codigo de barras" MaxLength="50" TextMode="SingleLine" AutoCompleteType="Disabled"></asp:TextBox>
+                    </div>
+                    <div class="col-sm-2">
+                        <asp:Button ID="btnBuscar" runat="server" Text="Buscar" class="btn btn-info" center-align="true" OnClick="btnBuscar_Click" />
+                    </div>
+                </div>
+            </div>
         </div>
-         <div class="row">
-             <table class="table">
-                      <thead>
-                        <tr>
-                            <th scope="col">Productos</th>
-                            <th scope="col">Cantidad</th>
-                            <th scope="col">Costo</th>                            
-                            <th scope="col"></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>5</td>
-                          <td>$15</td>                      
-                          <td>
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <button type="button" class="btn btn-danger"><i class="material-icons">delete</i></button>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <button type="button" class="btn btn-primary"><i class="material-icons">edit</i></button>
-                                    </div>
-                                </div>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>                                             
-        </div>         
+
+        <br />
+        <div >
+            
+            <div Class="table bs-table">
+                <asp:GridView ID="GridView_Ventas" runat="server"
+                    AutoGenerateColumns="False"
+                    CssClass="table table-bordered bs-table"
+                    DataKeyNames="Id"
+                    OnRowCommand="GridView_Ventas_RowCommand">
+
+                    <Columns>
+
+                        <%--campos no editables...--%>
+                        <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id"/>
+                        <asp:BoundField DataField="Producto" HeaderText="Producto" ReadOnly="True" SortExpression="Producto"/>
+                        <asp:BoundField DataField="Marca" HeaderText="Marca" ReadOnly="True" SortExpression="Marca" />
+                        <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" ReadOnly="True" SortExpression="Descripcion" />
+                        <asp:BoundField DataField="Proveedor" HeaderText="Proveedor" ReadOnly="True" SortExpression="Proveedor" />
+                        <asp:BoundField DataField="CostoVenta" HeaderText="Costo unitario" ReadOnly="True" SortExpression="CostoVenta" />
+                        <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" ReadOnly="True" SortExpression="Cantidad" />
+                        <asp:BoundField DataField="PrecioTotal" HeaderText="Costo total" ReadOnly="True" SortExpression="PrecioTotal" />
+                        
+                        <%--botones de acción sobre los registros...--%>
+                        <asp:TemplateField ItemStyle-HorizontalAlign="Center" >
+                            <ItemTemplate>
+                                <%--Botones de eliminar y editar cliente...--%>
+                                <asp:Button ID="btnQuitar" runat="server" CssClass="btn btn-info glyphicon glyphicon-remove" CommandName="Quitar" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />
+                            </ItemTemplate>
+
+                        </asp:TemplateField>
+
+
+                    </Columns>
+                </asp:GridView>
+            </div>
+
+            <center>
+                <div class="form-group"> <!-- Button -->
+                    <asp:Button ID="btnVenta" runat="server" Text="Generar Venta" class="btn btn-primary" center-align="true" OnClick="btnVenta_Click" />
+                </div>     
+            </center>
+
+        </div>
+
     </div>
 
 </asp:Content>
