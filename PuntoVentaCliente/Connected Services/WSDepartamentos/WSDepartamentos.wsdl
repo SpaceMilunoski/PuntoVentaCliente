@@ -29,7 +29,7 @@
       <s:element name="EliminarDepartamento">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="departamento" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>

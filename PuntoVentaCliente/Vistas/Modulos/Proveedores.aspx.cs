@@ -27,7 +27,7 @@ namespace PuntoVentaCliente.Vistas.Modulos
 
                 if (!IsPostBack) {
                     GridView_Proveedores.DataBind();
-                    btnInsertar.Text = "Agregar";
+                    btnInsertar.Text = "Agregar Proveedor";
 
                     mostrarCampos();
 
@@ -70,7 +70,7 @@ namespace PuntoVentaCliente.Vistas.Modulos
                     txtbTelefono.Text = row.Cells[6].Text;
                     txtbCorreo.Text = row.Cells[7].Text;
 
-                    btnInsertar.Text = "Actualizar";
+                    btnInsertar.Text = "Actualizar Proveedor";
                     
                 }
                 else if (e.CommandName == "Eliminar")
@@ -108,7 +108,7 @@ namespace PuntoVentaCliente.Vistas.Modulos
 
                 String json = JsonConvert.SerializeObject(proveedores);
 
-                if (btnInsertar.Text == "Agregar") {
+                if (btnInsertar.Text == "Agregar Proveedor") {
 
                     if (wsProveedores.InsertarProveedores(json)) {
                         ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "swal(\"Successful\", \"Operacion realizada con exito.\", \"success\");", true);
@@ -124,7 +124,7 @@ namespace PuntoVentaCliente.Vistas.Modulos
                     } else
                         ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "swal(\"Error\", \"Error del servidor.\", \"error\");", true);
 
-                } else if (btnInsertar.Text == "Actualizar") {
+                } else if (btnInsertar.Text == "Actualizar Proveedor") {
 
                     if (wsProveedores.ActualizarProveedores(json)) {
                         ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "swal(\"Successful\", \"Operacion realizada con exito.\", \"success\");", true);
@@ -138,7 +138,7 @@ namespace PuntoVentaCliente.Vistas.Modulos
                     } else
                         ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "swal(\"Error\", \"Error del servidor.\", \"error\");", true);
 
-                    btnInsertar.Text = "Agregar";
+                    btnInsertar.Text = "Agregar Proveedor";
                 }
 
                 txtbRazonSocial.Text = string.Empty;

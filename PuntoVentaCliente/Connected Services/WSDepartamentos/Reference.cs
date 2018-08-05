@@ -29,11 +29,12 @@ namespace PuntoVentaCliente.WSDepartamentos {
         [System.ServiceModel.OperationContractAttribute(Action="http://microsoft.com/webservices/InsertarDepartamento", ReplyAction="*")]
         System.Threading.Tasks.Task<PuntoVentaCliente.WSDepartamentos.InsertarDepartamentoResponse> InsertarDepartamentoAsync(PuntoVentaCliente.WSDepartamentos.InsertarDepartamentoRequest request);
         
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento departamento del espacio de nombres http://microsoft.com/webservices/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://microsoft.com/webservices/EliminarDepartamento", ReplyAction="*")]
-        bool EliminarDepartamento(int id);
+        PuntoVentaCliente.WSDepartamentos.EliminarDepartamentoResponse EliminarDepartamento(PuntoVentaCliente.WSDepartamentos.EliminarDepartamentoRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://microsoft.com/webservices/EliminarDepartamento", ReplyAction="*")]
-        System.Threading.Tasks.Task<bool> EliminarDepartamentoAsync(int id);
+        System.Threading.Tasks.Task<PuntoVentaCliente.WSDepartamentos.EliminarDepartamentoResponse> EliminarDepartamentoAsync(PuntoVentaCliente.WSDepartamentos.EliminarDepartamentoRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -165,6 +166,74 @@ namespace PuntoVentaCliente.WSDepartamentos {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class EliminarDepartamentoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="EliminarDepartamento", Namespace="http://microsoft.com/webservices/", Order=0)]
+        public PuntoVentaCliente.WSDepartamentos.EliminarDepartamentoRequestBody Body;
+        
+        public EliminarDepartamentoRequest() {
+        }
+        
+        public EliminarDepartamentoRequest(PuntoVentaCliente.WSDepartamentos.EliminarDepartamentoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://microsoft.com/webservices/")]
+    public partial class EliminarDepartamentoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string departamento;
+        
+        public EliminarDepartamentoRequestBody() {
+        }
+        
+        public EliminarDepartamentoRequestBody(string departamento) {
+            this.departamento = departamento;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class EliminarDepartamentoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="EliminarDepartamentoResponse", Namespace="http://microsoft.com/webservices/", Order=0)]
+        public PuntoVentaCliente.WSDepartamentos.EliminarDepartamentoResponseBody Body;
+        
+        public EliminarDepartamentoResponse() {
+        }
+        
+        public EliminarDepartamentoResponse(PuntoVentaCliente.WSDepartamentos.EliminarDepartamentoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://microsoft.com/webservices/")]
+    public partial class EliminarDepartamentoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool EliminarDepartamentoResult;
+        
+        public EliminarDepartamentoResponseBody() {
+        }
+        
+        public EliminarDepartamentoResponseBody(bool EliminarDepartamentoResult) {
+            this.EliminarDepartamentoResult = EliminarDepartamentoResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface WSDepartamentosSoapChannel : PuntoVentaCliente.WSDepartamentos.WSDepartamentosSoap, System.ServiceModel.IClientChannel {
     }
@@ -240,12 +309,29 @@ namespace PuntoVentaCliente.WSDepartamentos {
             return ((PuntoVentaCliente.WSDepartamentos.WSDepartamentosSoap)(this)).InsertarDepartamentoAsync(inValue);
         }
         
-        public bool EliminarDepartamento(int id) {
-            return base.Channel.EliminarDepartamento(id);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PuntoVentaCliente.WSDepartamentos.EliminarDepartamentoResponse PuntoVentaCliente.WSDepartamentos.WSDepartamentosSoap.EliminarDepartamento(PuntoVentaCliente.WSDepartamentos.EliminarDepartamentoRequest request) {
+            return base.Channel.EliminarDepartamento(request);
         }
         
-        public System.Threading.Tasks.Task<bool> EliminarDepartamentoAsync(int id) {
-            return base.Channel.EliminarDepartamentoAsync(id);
+        public bool EliminarDepartamento(string departamento) {
+            PuntoVentaCliente.WSDepartamentos.EliminarDepartamentoRequest inValue = new PuntoVentaCliente.WSDepartamentos.EliminarDepartamentoRequest();
+            inValue.Body = new PuntoVentaCliente.WSDepartamentos.EliminarDepartamentoRequestBody();
+            inValue.Body.departamento = departamento;
+            PuntoVentaCliente.WSDepartamentos.EliminarDepartamentoResponse retVal = ((PuntoVentaCliente.WSDepartamentos.WSDepartamentosSoap)(this)).EliminarDepartamento(inValue);
+            return retVal.Body.EliminarDepartamentoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PuntoVentaCliente.WSDepartamentos.EliminarDepartamentoResponse> PuntoVentaCliente.WSDepartamentos.WSDepartamentosSoap.EliminarDepartamentoAsync(PuntoVentaCliente.WSDepartamentos.EliminarDepartamentoRequest request) {
+            return base.Channel.EliminarDepartamentoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PuntoVentaCliente.WSDepartamentos.EliminarDepartamentoResponse> EliminarDepartamentoAsync(string departamento) {
+            PuntoVentaCliente.WSDepartamentos.EliminarDepartamentoRequest inValue = new PuntoVentaCliente.WSDepartamentos.EliminarDepartamentoRequest();
+            inValue.Body = new PuntoVentaCliente.WSDepartamentos.EliminarDepartamentoRequestBody();
+            inValue.Body.departamento = departamento;
+            return ((PuntoVentaCliente.WSDepartamentos.WSDepartamentosSoap)(this)).EliminarDepartamentoAsync(inValue);
         }
     }
 }

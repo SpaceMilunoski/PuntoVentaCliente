@@ -29,11 +29,12 @@ namespace PuntoVentaCliente.WSPuestos {
         [System.ServiceModel.OperationContractAttribute(Action="http://microsoft.com/webservices/InsertarPuesto", ReplyAction="*")]
         System.Threading.Tasks.Task<PuntoVentaCliente.WSPuestos.InsertarPuestoResponse> InsertarPuestoAsync(PuntoVentaCliente.WSPuestos.InsertarPuestoRequest request);
         
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento puesto del espacio de nombres http://microsoft.com/webservices/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://microsoft.com/webservices/EliminarPuesto", ReplyAction="*")]
-        bool EliminarPuesto(int id);
+        PuntoVentaCliente.WSPuestos.EliminarPuestoResponse EliminarPuesto(PuntoVentaCliente.WSPuestos.EliminarPuestoRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://microsoft.com/webservices/EliminarPuesto", ReplyAction="*")]
-        System.Threading.Tasks.Task<bool> EliminarPuestoAsync(int id);
+        System.Threading.Tasks.Task<PuntoVentaCliente.WSPuestos.EliminarPuestoResponse> EliminarPuestoAsync(PuntoVentaCliente.WSPuestos.EliminarPuestoRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -165,6 +166,74 @@ namespace PuntoVentaCliente.WSPuestos {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class EliminarPuestoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="EliminarPuesto", Namespace="http://microsoft.com/webservices/", Order=0)]
+        public PuntoVentaCliente.WSPuestos.EliminarPuestoRequestBody Body;
+        
+        public EliminarPuestoRequest() {
+        }
+        
+        public EliminarPuestoRequest(PuntoVentaCliente.WSPuestos.EliminarPuestoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://microsoft.com/webservices/")]
+    public partial class EliminarPuestoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string puesto;
+        
+        public EliminarPuestoRequestBody() {
+        }
+        
+        public EliminarPuestoRequestBody(string puesto) {
+            this.puesto = puesto;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class EliminarPuestoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="EliminarPuestoResponse", Namespace="http://microsoft.com/webservices/", Order=0)]
+        public PuntoVentaCliente.WSPuestos.EliminarPuestoResponseBody Body;
+        
+        public EliminarPuestoResponse() {
+        }
+        
+        public EliminarPuestoResponse(PuntoVentaCliente.WSPuestos.EliminarPuestoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://microsoft.com/webservices/")]
+    public partial class EliminarPuestoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool EliminarPuestoResult;
+        
+        public EliminarPuestoResponseBody() {
+        }
+        
+        public EliminarPuestoResponseBody(bool EliminarPuestoResult) {
+            this.EliminarPuestoResult = EliminarPuestoResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface WSPuestosSoapChannel : PuntoVentaCliente.WSPuestos.WSPuestosSoap, System.ServiceModel.IClientChannel {
     }
@@ -240,12 +309,29 @@ namespace PuntoVentaCliente.WSPuestos {
             return ((PuntoVentaCliente.WSPuestos.WSPuestosSoap)(this)).InsertarPuestoAsync(inValue);
         }
         
-        public bool EliminarPuesto(int id) {
-            return base.Channel.EliminarPuesto(id);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PuntoVentaCliente.WSPuestos.EliminarPuestoResponse PuntoVentaCliente.WSPuestos.WSPuestosSoap.EliminarPuesto(PuntoVentaCliente.WSPuestos.EliminarPuestoRequest request) {
+            return base.Channel.EliminarPuesto(request);
         }
         
-        public System.Threading.Tasks.Task<bool> EliminarPuestoAsync(int id) {
-            return base.Channel.EliminarPuestoAsync(id);
+        public bool EliminarPuesto(string puesto) {
+            PuntoVentaCliente.WSPuestos.EliminarPuestoRequest inValue = new PuntoVentaCliente.WSPuestos.EliminarPuestoRequest();
+            inValue.Body = new PuntoVentaCliente.WSPuestos.EliminarPuestoRequestBody();
+            inValue.Body.puesto = puesto;
+            PuntoVentaCliente.WSPuestos.EliminarPuestoResponse retVal = ((PuntoVentaCliente.WSPuestos.WSPuestosSoap)(this)).EliminarPuesto(inValue);
+            return retVal.Body.EliminarPuestoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PuntoVentaCliente.WSPuestos.EliminarPuestoResponse> PuntoVentaCliente.WSPuestos.WSPuestosSoap.EliminarPuestoAsync(PuntoVentaCliente.WSPuestos.EliminarPuestoRequest request) {
+            return base.Channel.EliminarPuestoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PuntoVentaCliente.WSPuestos.EliminarPuestoResponse> EliminarPuestoAsync(string puesto) {
+            PuntoVentaCliente.WSPuestos.EliminarPuestoRequest inValue = new PuntoVentaCliente.WSPuestos.EliminarPuestoRequest();
+            inValue.Body = new PuntoVentaCliente.WSPuestos.EliminarPuestoRequestBody();
+            inValue.Body.puesto = puesto;
+            return ((PuntoVentaCliente.WSPuestos.WSPuestosSoap)(this)).EliminarPuestoAsync(inValue);
         }
     }
 }

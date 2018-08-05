@@ -6,70 +6,73 @@
         <h1>Proveedores</h1>
         <br />
         <div class="row">
-            <form>
-                <div class="form-group">
-                    <div class="col-sm-5" style="background-color: white;">
-                        
-                        <asp:TextBox ID="txtbId" runat="server" type="text" class="form-control" name="Id" MaxLength="11" TextMode="SingleLine" visible="false"></asp:TextBox>
 
-                        <div class="form-group row">
-                            <label for="RazonSocial" class="col-sm-4 col-form-label">Razon social</label>
-                            <div class="col-sm-8">
-                                <asp:TextBox ID="txtbRazonSocial" runat="server" type="text" class="form-control" name="RazonSocial" placeholder="Nombre de la empresa" MaxLength="50" TextMode="SingleLine" AutoCompleteType="Disabled"></asp:TextBox>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="DireccionFiscal" class="col-sm-4 col-form-label">Direccion fiscal</label>
-                            <div class="col-sm-8">
-                                <asp:TextBox ID="txtbDireccionFiscal" runat="server" type="text" class="form-control" name="DireccionFiscal" placeholder="Direccion fiscal de la empresa" MaxLength="100" TextMode="SingleLine" AutoCompleteType="Disabled"></asp:TextBox>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="DireccionUbicacion" class="col-sm-4 col-form-label">Ubicacion fisica</label>
-                            <div class="col-sm-8">
-                                <asp:TextBox ID="txtbDireccionUbicacion" runat="server" type="text" class="form-control" name="DireccionUbicacion" placeholder="Direccion ubicacion de la empresa" MaxLength="100" TextMode="SingleLine" AutoCompleteType="Disabled"></asp:TextBox>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="Rfc" class="col-sm-4 col-form-label">RFC</label>
-                            <div class="col-sm-8">
-                                <asp:TextBox ID="txtbRfc" runat="server" type="text" class="form-control" name="Rfc" placeholder="RFC de la empresa" MaxLength="13" TextMode="SingleLine"></asp:TextBox>
-                            </div>
+            <div class="form-group">
+                <div class="col-sm-5" style="background-color: white;">
+                        
+                    <asp:TextBox ID="txtbId" runat="server" type="text" class="form-control" name="Id" MaxLength="11" TextMode="SingleLine" visible="false"></asp:TextBox>
+
+                    <div class="form-group row">
+                        <label for="RazonSocial" class="col-sm-4 col-form-label">Razon social*</label>
+                        <div class="col-sm-8">
+                            <asp:TextBox ID="txtbRazonSocial" runat="server" type="text" class="form-control" name="RazonSocial" placeholder="Nombre de la empresa" MaxLength="50" TextMode="SingleLine" AutoCompleteType="Disabled"></asp:TextBox>
                         </div>
                     </div>
-
-                    <div class="col-sm-5" style="background-color: white;">
-
-                        <div class="form-group row">
-                            <label for="NombreContacto" class="col-sm-4 col-form-label">Contacto</label>
-                            <div class="col-sm-8">
-                                <asp:TextBox ID="txtbNombreContacto" runat="server" type="text" class="form-control" name="NombreContacto" placeholder="Nombre de contacto" MaxLength="50" TextMode="SingleLine" AutoCompleteType="Disabled"></asp:TextBox>
-                            </div>
+                    <div class="form-group row">
+                        <label for="DireccionFiscal" class="col-sm-4 col-form-label">Direccion fiscal*</label>
+                        <div class="col-sm-8">
+                            <asp:TextBox ID="txtbDireccionFiscal" runat="server" type="text" class="form-control" name="DireccionFiscal" placeholder="Direccion fiscal de la empresa" MaxLength="100" TextMode="SingleLine" AutoCompleteType="Disabled"></asp:TextBox>
                         </div>
-                        <div class="form-group row">
-                            <label for="Telefono" class="col-sm-4 col-form-label">Telefono</label>
-                            <div class="col-sm-8">
-                                <asp:TextBox ID="txtbTelefono" runat="server" type="text" class="form-control" name="Telefono" placeholder="Telefono de contacto" MaxLength="15" TextMode="Phone" AutoCompleteType="Disabled"></asp:TextBox>
-                            </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="DireccionUbicacion" class="col-sm-4 col-form-label">Ubicacion fisica*</label>
+                        <div class="col-sm-8">
+                            <asp:TextBox ID="txtbDireccionUbicacion" runat="server" type="text" class="form-control" name="DireccionUbicacion" placeholder="Direccion ubicacion de la empresa" MaxLength="100" TextMode="SingleLine" AutoCompleteType="Disabled"></asp:TextBox>
                         </div>
-                        <div class="form-group row">
-                            <label for="Correo" class="col-sm-4 col-form-label">Correo</label>
-                            <div class="col-sm-8">
-                                <asp:TextBox ID="txtbCorreo" runat="server" type="text" class="form-control" name="Correo" placeholder="Correo del contacto" MaxLength="50" TextMode="Email" AutoCompleteType="Disabled"></asp:TextBox>
-                            </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Rfc" class="col-sm-4 col-form-label">RFC*</label>
+                        <div class="col-sm-8">
+                            <asp:TextBox ID="txtbRfc" runat="server" type="text" class="form-control" name="Rfc" placeholder="RFC de la empresa" MaxLength="13" TextMode="SingleLine"></asp:TextBox>
                         </div>
-
-                        <div style="background-color: white;">
-                            <div class="form-group row">
-                                <asp:Button ID="btnInsertar" runat="server" Text="" class="btn btn-success" center-align="true" OnClick="btnInsertar_Click" />
-                            </div>
-                        </div>
-
                     </div>
                 </div>
-            </form>
+
+                <div class="col-sm-5" style="background-color: white;">
+
+                    <div class="form-group row">
+                        <label for="NombreContacto" class="col-sm-4 col-form-label">Contacto*</label>
+                        <div class="col-sm-8">
+                            <asp:TextBox ID="txtbNombreContacto" runat="server" type="text" class="form-control" name="NombreContacto" placeholder="Nombre de contacto" MaxLength="50" TextMode="SingleLine" AutoCompleteType="Disabled"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Telefono" class="col-sm-4 col-form-label">Telefono*</label>
+                        <div class="col-sm-8">
+                            <asp:TextBox ID="txtbTelefono" runat="server" type="text" class="form-control" name="Telefono" placeholder="Telefono de contacto" MaxLength="15" TextMode="Phone" AutoCompleteType="Disabled"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Correo" class="col-sm-4 col-form-label">Correo*</label>
+                        <div class="col-sm-8">
+                            <asp:TextBox ID="txtbCorreo" runat="server" type="text" class="form-control" name="Correo" placeholder="Correo del contacto" MaxLength="50" TextMode="Email" AutoCompleteType="Disabled"></asp:TextBox>
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <div class="form-group row">
+                        <center>
+                            <asp:Button ID="btnInsertar" runat="server" Text="" class="btn btn-success" center-align="true" OnClick="btnInsertar_Click" />
+                        </center>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
         <br />
+
         <div class="row">
             <div class="col-sm-5">
                 <div class="form-group row">
