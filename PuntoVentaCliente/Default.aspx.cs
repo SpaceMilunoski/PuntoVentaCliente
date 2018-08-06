@@ -1,7 +1,3 @@
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
-using PuntoVentaCliente.Modelos;
-using PuntoVentaCliente.WSEmpleados;
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using PuntoVentaCliente.Modelos;

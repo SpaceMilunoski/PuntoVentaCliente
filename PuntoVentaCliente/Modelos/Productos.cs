@@ -26,12 +26,8 @@ namespace PuntoVentaCliente.Modelos
             set => id = value;
         }
 
-<<<<<<< HEAD
-        public string Codigo {
-=======
         public string Codigo
         {
->>>>>>> 680b211b4cb5d995e79b849bccf6cefd083149dc
             get => codigo;
             set => codigo = value;
         }
