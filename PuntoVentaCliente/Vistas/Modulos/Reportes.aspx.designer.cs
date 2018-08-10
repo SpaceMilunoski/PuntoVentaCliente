@@ -22,6 +22,15 @@ namespace PuntoVentaCliente.Vistas.Modulos {
         protected global::System.Web.UI.WebControls.DropDownList ddlTipoBusqueda;
         
         /// <summary>
+        /// Control Button1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
+        
+        /// <summary>
         /// Control txtbEmpleado.
         /// </summary>
         /// <remarks>
@@ -58,21 +67,12 @@ namespace PuntoVentaCliente.Vistas.Modulos {
         protected global::System.Web.UI.WebControls.Button btnBuscar;
         
         /// <summary>
-        /// Control GridView_Ventas.
+        /// Control GridView_Reportes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView_Ventas;
-        
-        /// <summary>
-        /// Control btnPDF.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPDF;
+        protected global::System.Web.UI.WebControls.GridView GridView_Reportes;
     }
 }

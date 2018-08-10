@@ -10,12 +10,13 @@
                 
                 <div class="form-group row">
                     <label for="TipoBusqueda" class="col-sm-2 col-form-label">Tipo de busqueda</label>
-                    <div class="col-sm-3">
+                    <div class="col-sm-5">
                         <asp:DropDownList CssClass="form-control" ID="ddlTipoBusqueda" runat="server">
                             <asp:ListItem Selected="True" Value="Empleado"> Empleado </asp:ListItem>
                             <asp:ListItem Value="Fecha"> Fecha </asp:ListItem>
                         </asp:DropDownList>
                     </div>
+                     <asp:Button ID="Button1" runat="server" Text="Generar PDF" class="btn btn-primary" center-align="true" OnClick="btnPDF_Click" />
                 </div>
 
                 <br />
@@ -51,7 +52,7 @@
         <div >
             
            <div Class="table bs-table">
-                <asp:GridView ID="GridView_Ventas" runat="server"
+                <asp:GridView ID="GridView_Reportes" runat="server"
                     AutoGenerateColumns="False"
                     CssClass="table table-bordered bs-table"
                     DataKeyNames="Id"
@@ -70,7 +71,7 @@
                         <asp:TemplateField ItemStyle-HorizontalAlign="Center" >
                             <ItemTemplate>
                                 <%--Botones de eliminar y editar cliente...--%>
-                                <asp:Button ID="btnVerDetalles" runat="server" CssClass="btn btn-info glyphicon glyphicon-remove" CommandName="VerDetalles" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />
+                                <asp:Button ID="btnVerDetalles" runat="server" Text="Detalles"  CssClass="btn btn-info glyphicon glyphicon-remove" CommandName="VerDetalles" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />
                             </ItemTemplate>
 
                         </asp:TemplateField>
@@ -79,13 +80,6 @@
                     </Columns>
                 </asp:GridView>
             </div>
-
-            <center>
-                <div class="form-group"> <!-- Button -->
-                    <asp:Button ID="btnPDF" runat="server" Text="Generar PDF" class="btn btn-primary" center-align="true" OnClick="btnPDF_Click" />
-                </div>     
-            </center>
-
 
         </div>
 
