@@ -70,6 +70,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="BuscarProductoParaVenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="busqueda" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarProductoParaVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarProductoParaVentaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="ConsultarVentasSoapIn">
@@ -102,6 +116,12 @@
   <wsdl:message name="DetallesVentaSoapOut">
     <wsdl:part name="parameters" element="tns:DetallesVentaResponse" />
   </wsdl:message>
+  <wsdl:message name="BuscarProductoParaVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarProductoParaVenta" />
+  </wsdl:message>
+  <wsdl:message name="BuscarProductoParaVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarProductoParaVentaResponse" />
+  </wsdl:message>
   <wsdl:portType name="WSVentasSoap">
     <wsdl:operation name="ConsultarVentas">
       <wsdl:input message="tns:ConsultarVentasSoapIn" />
@@ -122,6 +142,10 @@
     <wsdl:operation name="DetallesVenta">
       <wsdl:input message="tns:DetallesVentaSoapIn" />
       <wsdl:output message="tns:DetallesVentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarProductoParaVenta">
+      <wsdl:input message="tns:BuscarProductoParaVentaSoapIn" />
+      <wsdl:output message="tns:BuscarProductoParaVentaSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSVentasSoap" type="tns:WSVentasSoap">
@@ -171,6 +195,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="BuscarProductoParaVenta">
+      <soap:operation soapAction="http://microsoft.com/webservices/BuscarProductoParaVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WSVentasSoap12" type="tns:WSVentasSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -212,6 +245,15 @@
     </wsdl:operation>
     <wsdl:operation name="DetallesVenta">
       <soap12:operation soapAction="http://microsoft.com/webservices/DetallesVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarProductoParaVenta">
+      <soap12:operation soapAction="http://microsoft.com/webservices/BuscarProductoParaVenta" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

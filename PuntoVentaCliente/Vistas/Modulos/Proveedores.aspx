@@ -63,7 +63,7 @@
 
                     <div class="form-group row">
                         <center>
-                            <asp:Button ID="btnInsertar" runat="server" Text="" class="btn btn-success" center-align="true" OnClick="btnInsertar_Click" />
+                            <asp:Button ID="btnInsertar" runat="server" Text="" class="btn btn-success" center-align="true" OnClick="btnInsertar_Click" OnClientClick="return confirm('¿Realizar accion?');"/>
                         </center>
                     </div>
 

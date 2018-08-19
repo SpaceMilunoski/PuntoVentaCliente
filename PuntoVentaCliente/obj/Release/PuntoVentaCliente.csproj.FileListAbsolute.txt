@@ -88,3 +88,5 @@ C:\Users\halco\OneDrive\Documentos\Visual Studio 2017\Projects\PuntoVentaCliente
 C:\Users\halco\OneDrive\Documentos\Visual Studio 2017\Projects\PuntoVentaCliente\PuntoVentaCliente\obj\Release\PuntoVentaCliente.csproj.CopyComplete
 C:\Users\halco\OneDrive\Documentos\Visual Studio 2017\Projects\PuntoVentaCliente\PuntoVentaCliente\obj\Release\PuntoVentaCliente.dll
 C:\Users\halco\OneDrive\Documentos\Visual Studio 2017\Projects\PuntoVentaCliente\PuntoVentaCliente\obj\Release\PuntoVentaCliente.pdb
+C:\Users\halco\OneDrive\Documentos\Visual Studio 2017\Projects\PuntoVentaCliente\PuntoVentaCliente\bin\itextsharp.dll
+C:\Users\halco\OneDrive\Documentos\Visual Studio 2017\Projects\PuntoVentaCliente\PuntoVentaCliente\bin\itextsharp.xml

@@ -49,6 +49,13 @@ namespace PuntoVentaCliente.WSVentas {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://microsoft.com/webservices/DetallesVenta", ReplyAction="*")]
         System.Threading.Tasks.Task<PuntoVentaCliente.WSVentas.DetallesVentaResponse> DetallesVentaAsync(PuntoVentaCliente.WSVentas.DetallesVentaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento busqueda del espacio de nombres http://microsoft.com/webservices/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://microsoft.com/webservices/BuscarProductoParaVenta", ReplyAction="*")]
+        PuntoVentaCliente.WSVentas.BuscarProductoParaVentaResponse BuscarProductoParaVenta(PuntoVentaCliente.WSVentas.BuscarProductoParaVentaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://microsoft.com/webservices/BuscarProductoParaVenta", ReplyAction="*")]
+        System.Threading.Tasks.Task<PuntoVentaCliente.WSVentas.BuscarProductoParaVentaResponse> BuscarProductoParaVentaAsync(PuntoVentaCliente.WSVentas.BuscarProductoParaVentaRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -392,6 +399,74 @@ namespace PuntoVentaCliente.WSVentas {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class BuscarProductoParaVentaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="BuscarProductoParaVenta", Namespace="http://microsoft.com/webservices/", Order=0)]
+        public PuntoVentaCliente.WSVentas.BuscarProductoParaVentaRequestBody Body;
+        
+        public BuscarProductoParaVentaRequest() {
+        }
+        
+        public BuscarProductoParaVentaRequest(PuntoVentaCliente.WSVentas.BuscarProductoParaVentaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://microsoft.com/webservices/")]
+    public partial class BuscarProductoParaVentaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string busqueda;
+        
+        public BuscarProductoParaVentaRequestBody() {
+        }
+        
+        public BuscarProductoParaVentaRequestBody(string busqueda) {
+            this.busqueda = busqueda;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class BuscarProductoParaVentaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="BuscarProductoParaVentaResponse", Namespace="http://microsoft.com/webservices/", Order=0)]
+        public PuntoVentaCliente.WSVentas.BuscarProductoParaVentaResponseBody Body;
+        
+        public BuscarProductoParaVentaResponse() {
+        }
+        
+        public BuscarProductoParaVentaResponse(PuntoVentaCliente.WSVentas.BuscarProductoParaVentaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://microsoft.com/webservices/")]
+    public partial class BuscarProductoParaVentaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string BuscarProductoParaVentaResult;
+        
+        public BuscarProductoParaVentaResponseBody() {
+        }
+        
+        public BuscarProductoParaVentaResponseBody(string BuscarProductoParaVentaResult) {
+            this.BuscarProductoParaVentaResult = BuscarProductoParaVentaResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface WSVentasSoapChannel : PuntoVentaCliente.WSVentas.WSVentasSoap, System.ServiceModel.IClientChannel {
     }
@@ -544,6 +619,31 @@ namespace PuntoVentaCliente.WSVentas {
             inValue.Body = new PuntoVentaCliente.WSVentas.DetallesVentaRequestBody();
             inValue.Body.id = id;
             return ((PuntoVentaCliente.WSVentas.WSVentasSoap)(this)).DetallesVentaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PuntoVentaCliente.WSVentas.BuscarProductoParaVentaResponse PuntoVentaCliente.WSVentas.WSVentasSoap.BuscarProductoParaVenta(PuntoVentaCliente.WSVentas.BuscarProductoParaVentaRequest request) {
+            return base.Channel.BuscarProductoParaVenta(request);
+        }
+        
+        public string BuscarProductoParaVenta(string busqueda) {
+            PuntoVentaCliente.WSVentas.BuscarProductoParaVentaRequest inValue = new PuntoVentaCliente.WSVentas.BuscarProductoParaVentaRequest();
+            inValue.Body = new PuntoVentaCliente.WSVentas.BuscarProductoParaVentaRequestBody();
+            inValue.Body.busqueda = busqueda;
+            PuntoVentaCliente.WSVentas.BuscarProductoParaVentaResponse retVal = ((PuntoVentaCliente.WSVentas.WSVentasSoap)(this)).BuscarProductoParaVenta(inValue);
+            return retVal.Body.BuscarProductoParaVentaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PuntoVentaCliente.WSVentas.BuscarProductoParaVentaResponse> PuntoVentaCliente.WSVentas.WSVentasSoap.BuscarProductoParaVentaAsync(PuntoVentaCliente.WSVentas.BuscarProductoParaVentaRequest request) {
+            return base.Channel.BuscarProductoParaVentaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PuntoVentaCliente.WSVentas.BuscarProductoParaVentaResponse> BuscarProductoParaVentaAsync(string busqueda) {
+            PuntoVentaCliente.WSVentas.BuscarProductoParaVentaRequest inValue = new PuntoVentaCliente.WSVentas.BuscarProductoParaVentaRequest();
+            inValue.Body = new PuntoVentaCliente.WSVentas.BuscarProductoParaVentaRequestBody();
+            inValue.Body.busqueda = busqueda;
+            return ((PuntoVentaCliente.WSVentas.WSVentasSoap)(this)).BuscarProductoParaVentaAsync(inValue);
         }
     }
 }

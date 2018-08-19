@@ -29,3 +29,14 @@ textarea {
         padding: 0;
     }
 }
+
+.swal2-modal pre {
+    background: #49483e;
+    color: #f7f7f7;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.floatButton {
+    float: right;
+}

@@ -40,6 +40,15 @@ namespace PuntoVentaCliente.Vistas.Modulos {
         protected global::System.Web.UI.WebControls.GridView GridView_Ventas;
         
         /// <summary>
+        /// Control lblTotal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotal;
+        
+        /// <summary>
         /// Control btnVenta.
         /// </summary>
         /// <remarks>
@@ -47,5 +56,14 @@ namespace PuntoVentaCliente.Vistas.Modulos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnVenta;
+        
+        /// <summary>
+        /// Control btnTicket.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnTicket;
     }
 }
